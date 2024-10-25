@@ -28,6 +28,9 @@ Log into grafana and see both Orgs.  Each org has the same dashboards.
 
 #### Step 7
 Copy the cluster.json file from `./providers/dashboards/1` to `./providers/dashboards/2`
+```
+cp ./providers/dashboards/1/cluster.json ./providers/dashboards/2/cluster.json
+```
 
 #### Step 8
 Check the `dashboard_versions` table in mysql.

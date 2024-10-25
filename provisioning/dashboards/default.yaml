@@ -5,11 +5,13 @@ providers:
   orgId: 1
   folder: "Services"
   type: file
+  updateIntervalSeconds: 10
   options:
     path: /etc/grafana/providers/dashboards/1
 # - name: test-2
 #   orgId: 2
 #   folder: "Services"
 #   type: file
+#   updateIntervalSeconds: 10
 #   options:
 #     path: /etc/grafana/providers/dashboards/2
