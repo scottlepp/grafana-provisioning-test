@@ -1,0 +1,35 @@
+services:
+  grafana:
+    image: grafana/grafana:10.4.1
+    container_name: grafana
+    restart: unless-stopped
+    environment:
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - GF_DATABASE_TYPE=mysql
+      - GF_DATABASE_HOST=mysql:3306
+      - GF_DATABASE_NAME=grafana
+      - GF_DATABASE_USER=grafana
+      - GF_DATABASE_PASSWORD=password
+    ports:
+     - '3000:3000'
+    volumes:
+     - './grafana:/var/lib/grafana'
+     - './provisioning:/etc/grafana/provisioning'
+     - './providers:/etc/grafana/providers'
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:8.0.40
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: grafana
+      MYSQL_USER: grafana
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    expose:
+      - '3306'
+    command: [mysqld, --ssl=0]
+    restart: always
