@@ -7,9 +7,9 @@ providers:
   type: file
   options:
     path: /etc/grafana/providers/dashboards/1
-- name: test-2
-  orgId: 2
-  folder: "Services"
-  type: file
-  options:
-    path: /etc/grafana/providers/dashboards/2
+# - name: test-2
+#   orgId: 2
+#   folder: "Services"
+#   type: file
+#   options:
+#     path: /etc/grafana/providers/dashboards/2

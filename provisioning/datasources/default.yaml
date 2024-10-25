@@ -4,6 +4,6 @@ datasources:
   - name: TestData
     type: testdata
     orgId: 1
-  - name: TestData
-    type: testdata
-    orgId: 2
+  # - name: TestData
+  #   type: testdata
+  #   orgId: 2
